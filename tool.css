@@ -1,0 +1,197 @@
+
+@charset "utf-8";
+/* ===== Base ===== */
+/* ===== 样式重置 ===== */
+html, header, footer,body, div, span, 
+h1, h2, h3, h4, h5, h6, p, pre,
+a, em, img, small, strong, 
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, hgroup, nav, aside, details, section, summary, figcaption, figure{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-size:14px;
+	color:#313131;
+}
+ul,li{list-style: none;}
+img{vertical-align: bottom;}
+html,body{height: 100%;}
+/* ===== tool_class ===== */
+/* ===== 工具类 ===== */
+
+    /* ===== 容器 ===== */
+    /* ===== .container ===== */
+.container{
+    width: 944px;
+    margin: 0 auto;
+}
+	/* ===== 清除浮动 ===== */
+	/* ===== clearcloat ===== */
+.clearfloat{
+	zoom:1;
+}
+.clearfloat::after{
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+	content: '';
+}
+	
+    /* ===== 主题颜色 ===== */
+    /* ===== themecolor ===== */
+.themecolor{
+
+}
+
+	/* ===== flex布局 ===== */
+	/* ===== flexbox ===== */
+.flex{
+	display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+    display: -moz-box; /* Firefox 17- */
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+    display: -moz-flex; /* Firefox 18+ */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+}
+.flex-c{
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.flex-1{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.flex-align-center{
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -moz-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.flex-pack-justify{
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -moz-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+	/* ===== 按钮 ===== */
+	/* ===== button ===== */
+.button{
+	border:none;
+	outline: none;
+	text-align: center;
+}
+.button-info{background: #38c;color: #fff;}
+.button-danger{background: orangered;color: #fff;}
+
+    /* ===== 侧边栏盒子 ===== */
+    /* ===== 侧边栏盒子指定为label标签，里面包含3个span标签，默认绑定for=“btn” ，在其上方有一个兄弟input标签，
+             id=“btn”===== */
+    /* ===== asidebox ===== */
+    /* ===== asidebox is a label tag,with three span tags in there,default bingding 'for="btn"' ,
+             there is a input tag beside it , with 'id="btn"'===== */
+#btn{
+    position: absolute;
+    opacity: 0;
+    z-index: -1 !important;
+}
+.asidebox{
+    position: absolute;
+    left: 5%;top: 50%;
+    transform: translateY(-50%);
+}
+.asidebox span{
+    display: block;
+    background: #000;
+    width: 24px;
+    height: 4px;
+    margin-bottom: 4px;
+    transition: 0.3s;
+}
+.asidebox span:nth-of-type(2){
+    width: 20px;
+}
+.asidebox span:last-of-type{
+    margin-bottom: 0;
+}
+#btn:checked~.asidebox span:first-of-type{
+    display: none;
+}
+#btn:checked~.asidebox span:nth-of-type(2){
+    transform: rotate(45deg) translate(5px,6px);
+    width: 24px;
+}
+#btn:checked~.asidebox span:last-of-type{
+    transform: rotate(-45deg);
+}
+
+    /* ===== 放大镜 ===== */
+    /* ===== magnifying glass ===== */
+.magnifying{
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+.magnifying::after{
+    display: block;
+    width: 2px;
+    height: 11px;
+    border-radius: 1px;
+    background: #333;
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    content: '';
+    transform: rotate(-45deg);
+}
+    /* ===== 关闭按钮 ===== */
+    /* ===== close button ===== */
+.close{
+    width: 30px;
+    height: 30px;
+}
+.close span{
+    width: 24px;
+    height: 5px;
+    display: block;
+    border-radius: 2px;
+    background: #000;
+}
+.close span:first-child{
+    margin-bottom: 5px;
+    transform: rotate(45deg) translate(7px,6px);
+}
+.close span:last-child{
+    transform: rotate(-45deg) translate(0px,-1px);
+}
+    /* ===== 侧边栏 ===== */
+    /* ===== .aside ===== */
+.aside{
+    margin-left: 1%;
+    box-sizing: border-box;
+}
+.aside>ul li{
+    margin-top: 20px;
+}
+.aside>ul li li{
+    margin-top: 10px;
+}
